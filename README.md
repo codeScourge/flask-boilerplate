@@ -1,5 +1,11 @@
-# flask-boilerplate
-This is a simple boilerplate for a Flask webapp served by gunicorn and nginx.
-The templates and static folders are set up, the static content is served through nginx for better performance
-It also has Prometheus configured for metrics on port 9090, as well as node-exporter and prometheus-flask-exporter for getting information about hardware and api-usage.
+# flask-react-boilerplate
+
+### motivation
+Serverside-rendering is cool, but I like Python for backend.
+
+### content
+This boilerplate features a simple flask app which renders an HTML page. Then ReactJS can be used to build this Single-Page-Application. Bundled using Webpack.
+
+### how to run
+just do ```docker-compose up --build``` to start your docker-compose app. It should now be available when you enter ```localhost``` in your browser
 

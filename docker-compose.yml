@@ -1,18 +1,10 @@
 version: '3.7'
 
-volumes:
-  prometheus_data: {}
-
 services:
   flask:
-    build: ./api
+    build: .
     container_name: flask
     restart: unless-stopped
-    environment:
-      - prometheus_multiproc_dir=/tmp
-      - PROMETHEUS_MULTIPROC_DIR=/tmp
-    expose:
-      - 8080
 
   nginx:
     build: ./nginx
@@ -20,35 +12,5 @@ services:
     restart: unless-stopped
     ports:
       - "80:80"
-
-  prometheus:
-    image: "quay.io/prometheus/prometheus"
-    container_name: prometheus
-    restart: unless-stopped
-    ports: ["9090:9090"]
-    volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
-      - prometheus_data:/prometheus
-    command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
-      - '--storage.tsdb.path=/prometheus'
-      - '--web.console.libraries=/etc/prometheus/console_libraries'
-      - '--web.console.templates=/etc/prometheus/consoles'
-      - '--web.enable-lifecycle'
-
-  node-exporter:
-    image: prom/node-exporter:latest
-    container_name: node-exporter
-    restart: unless-stopped
-    user: root
-    volumes:
-      - /proc:/host/proc:ro
-      - /sys:/host/sys:ro
-      - /:/rootfs:ro
-    command:
-      - '--path.procfs=/host/proc'
-      - '--path.rootfs=/rootfs'
-      - '--path.sysfs=/host/sys'
-      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
-    ports:
-      - "9100:9100"
+    depends_on:
+      - flask

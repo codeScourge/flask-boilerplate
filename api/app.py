@@ -1,8 +1,6 @@
-from prometheus_flask_exporter.multiprocess import GunicornInternalPrometheusMetrics
 from flask import Flask, render_template
 
 app = Flask(__name__)
-metrics = GunicornInternalPrometheusMetrics(app)
 
 @app.route("/ping", methods=["GET"])
 def pingRoute():
