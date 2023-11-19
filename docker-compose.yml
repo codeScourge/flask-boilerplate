@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   flask:
-    build: .
+    build: ./backend
     container_name: flask
     restart: unless-stopped
 

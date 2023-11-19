@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import App from './main';
+import Router from './router';
 
 // attach react to #root in home.html
 const root = document.getElementById('root');
 ReactDOM.createRoot(root).render(
       <React.StrictMode>
-        <App />
+        <Router/>
       </React.StrictMode>
   );
