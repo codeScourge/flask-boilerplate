@@ -9,7 +9,7 @@ export default function App() {
 
     function handleDouble() {
         if (count != 0) {
-            fetch("/api/double/" + count.toString(), {
+            fetch("/dev/api/double/" + count.toString(), {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"

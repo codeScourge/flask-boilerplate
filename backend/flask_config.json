@@ -1,3 +1,4 @@
 {
-    "DEBUG": false
+    "DEBUG": false,
+    "STATIC_FOLDER": "./static"
 }

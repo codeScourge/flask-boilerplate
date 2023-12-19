@@ -1,6 +1,7 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import Router from './router';
+import Router from './js/router';
+import React from 'react';
+import './css/index.css';
 
 // attach react to #root in home.html
 const root = document.getElementById('root');
