@@ -27,8 +27,8 @@ const config = {
             {
                 test: /\.(css|scss)$/,
                 use: [
-                    'style-loader', // injects CSS into the DOM
-                    'css-loader',   // translates CSS into CommonJS
+                    'style-loader', 
+                    'css-loader',
                 ]
             },
         ]

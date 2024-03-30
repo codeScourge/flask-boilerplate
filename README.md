@@ -3,9 +3,11 @@
 ### motivation
 Serverside-rendering is cool, but I like Python for backend.
 
-### content
-This boilerplate features a simple flask app which renders an HTML page. Then ReactJS can be used to build this Single-Page-Application. Bundled using Webpack.
+### feautes
+- Simple flask app which renders an HTML page
+- ReactJS for Single-Page-Application, bundled using Webpack
+- Docker container for the flask app and docker-compose for managing it
 
 ### how to run
-just run ```bash deploy.sh``` to deploy the application to AWS-Lambda
- 
+- Build the bundle using ``npm run build``
+- Run the application using ``docker-compose up --build``
